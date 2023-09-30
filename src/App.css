@@ -14,7 +14,8 @@ gap: 2.5rem;
   flex-basis: 60%;
   font-size: 20px;
   font-weight: 600;
-  line-height: 114%;
+  color: #000;
+  /* line-height: 114%; */
 }
 .choiceButton{
   border: none;
@@ -22,6 +23,27 @@ gap: 2.5rem;
 .layout{
 background-color: #FFF;
 }
-.pageinfo{
-background-color: aqua;
+
+:where(.css-dev-only-do-not-override-pr0fja).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected{
+background-color:#01645C;
+color: #FFF;
+}
+:where(.css-dev-only-do-not-override-pr0fja).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after{
+  border-bottom-width: 0 ;
+  border-bottom-color: #01645C ;
+  background-color: #01645C;
+  
+}
+:where(.css-dev-only-do-not-override-pr0fja).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected:hover{
+  background-color: #01645C;
+}
+:where(.css-dev-only-do-not-override-pr0fja).ant-menu-light.ant-menu-horizontal >.ant-menu-item:hover::after{
+  border-bottom-width: 0;
+    border-bottom-color: #01645C;
+   
+}
+.formLabel{
+  color: #000;
+  font-weight: 600;
+  font-size: 20px;
 }

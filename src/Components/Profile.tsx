@@ -28,7 +28,7 @@ function Profile() {
     <Form layout='vertical'>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label'>Education</label>
+        <label htmlFor="" className='Label formLabel'>Education</label>
     <Checkbox onChange={handleChecked}>Checkbox</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
     <Switch size="small" onChange={() => {
@@ -40,7 +40,7 @@ function Profile() {
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label'>Experience</label>
+        <label htmlFor="" className='Label formLabel'>Experience</label>
     <Checkbox defaultChecked onChange={handleChecked}>Mandatory</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
     <Switch defaultChecked size="small" onChange={() => {
@@ -52,7 +52,7 @@ function Profile() {
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label'>Resume</label>
+        <label htmlFor="" className='Label formLabel'>Resume</label>
     <Checkbox onChange={handleChecked}>Checkbox</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
         <Switch size="small" onChange={() => {

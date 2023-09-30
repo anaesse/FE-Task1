@@ -11,18 +11,21 @@ const { TextArea } = Input;
 
 const items: MenuProps['items'] = [
   {
-    label: '1st menu item',
+    label: '',
     key: '0',
   },
   {
-    label: '2nd menu item',
+    type: 'divider',
+  },
+  {
+    label: '',
     key: '1',
   },
   {
     type: 'divider',
   },
   {
-    label: '3rd menu item',
+    label: '',
     key: '3',
   },
 ];
@@ -35,21 +38,25 @@ function MoreQuestions() {
         title="Additional questions" bordered={true} headStyle= {{backgroundColor:'#D0F7FA',fontSize:'1.5em', fontWeight:'600'}} style={{ width: 595,  boxShadow: '2px 2px 2px 1px #f5f5f5' }}>
              <Form layout='vertical'>
     <FormItem  >
+    <Space direction='vertical'  >
+          <p style={{color:'#979797', fontSize:'14px', fontWeight:'500'}}>Paragraph</p>
         <Space size={140} >
         <label htmlFor="" className='LabelQuestions'>Please tell me about yourself in less than 500 words</label>
     <EditOutlined />
         </Space>
         <Input  bordered={false} style={{borderBottom:'1px solid #C4C4C4'}} maxLength={500} allowClear  />
+        </Space>
     </FormItem>
     <FormItem  >
-    <Dropdown menu={{ items }} trigger={['click']}>
-      <Space size={120} onClick={(e) => e.preventDefault()}>
-      Please select the year of graduation from the list below
+    <p style={{color:'#979797', fontSize:'14px', fontWeight:'500'}}>Dropdown</p>
+    <Dropdown menu={{ items }} trigger={['click']} className='LabelQuestions'>
+      <Space size={120} onClick={(e) => e.preventDefault()}style={{fontSize:'15px', fontWeight:'600', color:'#000'}}>
+         Please select the year of graduation from the list below
       <EditOutlined />
       </Space>
   </Dropdown>
     </FormItem>
-    <FormItem label= 'Question'  >
+    <FormItem label= 'Question' className='LabelQuestions'  >
         <TextArea
         placeholder="Type here"
         autoSize={{ minRows: 2, maxRows: 6 }}
@@ -62,7 +69,7 @@ function MoreQuestions() {
       <Space size={10}>
         <Button className='choiceButton'><UnorderedListOutlined /></Button>
       <Space direction='vertical'>
-        <label>Choice</label>
+        <label className='LabelQuestions'>Choice</label>
         <TextArea
         placeholder="Type here"
         autoSize={{ minRows: 3, maxRows: 6 }}
@@ -81,7 +88,7 @@ function MoreQuestions() {
     <Divider />
     <FormItem  >
         <Space direction='vertical'  >
-          <p>Yes/No questions</p>
+          <p style={{color:'#979797', fontSize:'14px', fontWeight:'500'}}>Yes/No questions</p>
           <Space size={140} >
         <label htmlFor="" className='LabelQuestions'>Have you ever been rejected by the UK embassy?</label>
           <EditOutlined />

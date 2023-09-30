@@ -24,14 +24,14 @@ function HeaderContainer() {
             {
               key: '/',
               label: 'Personal Detail',
-              style:{}
+              className:'Pageinfo'
           
               
             },
             {
-              key: '/appointment',
+              key: '/application',
               label: 'Application Form',
-              
+              className:'Pageinfo'
               
             },
             {

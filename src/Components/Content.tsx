@@ -6,10 +6,10 @@ function Content() {
   return (
     <div>
         <Routes>
-            <Route path='/' element={<div>Personal Details</div>}></Route>
-            <Route path='/appointment' Component={ApplicationForm}></Route>
-            <Route path='/workflow' element={<div>Workflow</div>}></Route>
-            <Route path='/preview' element={<div>Preview</div>}></Route>
+            <Route path='/' element={<div></div>}></Route>
+            <Route path='/application' Component={ApplicationForm}></Route>
+            <Route path='/workflow' element={<div></div>}></Route>
+            <Route path='/preview' element={<div></div>}></Route>
         </Routes>
     </div>
   )

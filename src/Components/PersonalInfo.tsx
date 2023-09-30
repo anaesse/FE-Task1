@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../App.css'
 import { Button, Card, Form, Input } from 'antd';
 import FormItem from 'antd/es/form/FormItem';
@@ -28,18 +28,18 @@ function PersonalInfo() {
    >
 <div>
     <Form layout='vertical'>
-    <FormItem label='First Name' >
+    <FormItem label='First Name' className='formLabel' >
     <Input bordered={false} type='text' style={{borderBottom:'1px solid #C4C4C4'}} />
     </FormItem>
-    <FormItem label='Last Name' >
+    <FormItem label='Last Name' className='formLabel' >
     <Input bordered={false} typeof='text' style={{borderBottom:'1px solid #C4C4C4'}} />
     </FormItem>
-    <FormItem label='Email' >
+    <FormItem label='Email' className='formLabel' >
     <Input bordered={false} type='email' style={{borderBottom:'1px solid #C4C4C4'}} />
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label'>Phone (without dial code)</label>
+        <label htmlFor="" className='Label formLabel' >Phone <span>(without dial code)</span></label>
     <Checkbox onChange={handleChecked}>Checkbox</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
     <Switch size="small" onChange={() => {
@@ -51,7 +51,7 @@ function PersonalInfo() {
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label'>Nationality</label>
+        <label htmlFor="" className='Label formLabel'>Nationality</label>
     <Checkbox onChange={handleChecked}>Checkbox</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
     <Switch size="small" onChange={() => {
@@ -63,7 +63,7 @@ function PersonalInfo() {
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label'>Current Residence</label>
+        <label htmlFor="" className='Label formLabel'>Current Residence</label>
     <Checkbox onChange={handleChecked}>Checkbox</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
     <Switch size="small" onChange={() => {
@@ -75,7 +75,7 @@ function PersonalInfo() {
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label' >ID Number</label>
+        <label htmlFor="" className='Label formLabel' >ID Number</label>
     <Checkbox onChange={handleChecked}>Checkbox</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
     <Switch size="small" onChange={() => {
@@ -87,7 +87,7 @@ function PersonalInfo() {
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label'>Date of Birth</label>
+        <label htmlFor="" className='Label formLabel'>Date of Birth</label>
     <Checkbox onChange={handleChecked}>Checkbox</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
     <Switch size="small" onChange={() => {
@@ -99,15 +99,15 @@ function PersonalInfo() {
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
-        <label htmlFor="" className='Label' >Gender</label>
-    <Checkbox onChange={handleChecked}>Checkbox</Checkbox>
+        <label htmlFor="" className='Label formLabel' >Gender</label>
+    <Checkbox onChange={handleChecked} >Checkbox</Checkbox>
     <div style={{display:'flex',alignItems:'center', gap:'4px'}}>
-    <Switch size="small" onChange={() => {
+    <Switch size="small"onChange={() => {
             setgenderChange(!genderChange);}}  />
         <p>{genderChange ? 'Hide' : 'Show'}</p>
     </div>
         </div>
-    <Input bordered={false} type='tel' style={{borderBottom:'1px solid #C4C4C4'}} />
+    <Input bordered={false}  type='tel' style={{borderBottom:'1px solid #C4C4C4'}} />
     </FormItem>
     <Button style={{border:'none', boxShadow:'none', fontWeight:'semi-bold', fill:'#000', fontSize:'1.5em', lineHeight:'24px'}}icon={<PlusOutlined  style={{fontWeight:'bold', fill:'#000', fontSize:'1.2em'}} />}>Add a question</Button>
     </Form>

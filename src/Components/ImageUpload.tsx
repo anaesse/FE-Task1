@@ -1,12 +1,11 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Card, Space, message } from 'antd';
 import { Upload } from 'antd';
 import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 import { UploadOutlined } from '@ant-design/icons';
 import ImageContainer from './ImageContainer';
 
-// const { Meta } = Card;
 
 function ImageUpload() {
     const [fileList, setFileList] = useState<UploadFile[]>([ ]);
@@ -15,8 +14,6 @@ function ImageUpload() {
     const onChange: UploadProps['onChange'] = ({ fileList: newFileList }) => {
         setFileList(newFileList);
         setimageUpload(true);
-        // console.log(fileList)
-        console.log(newFileList)
       };
     
       const onPreview = async (file: UploadFile) => {
@@ -42,21 +39,14 @@ function ImageUpload() {
     if (!isJpgOrPng) {
       message.error('You can only upload JPG/PNG files');
     }
-    const isLt2M = file.size / 1024 / 1024 <= 1000;
+    const isLt2M = file.size / 1024 / 1024 <= 1;
     if (!isLt2M) {
-      message.error('Image must not be greater than 1Gb');
+      message.error('Image must not be greater than 1Mb');
     }
     return isJpgOrPng && isLt2M;
   };
   return (
     <>
-    {/* <Card
-    hoverable
-    style={{ width: 300 }}
-    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-  >
-    <Meta title="Europe Street beat" description="www.instagram.com" />
-  </Card> */}
 
   <Card 
   title="Upload cover image" 
@@ -77,11 +67,10 @@ function ImageUpload() {
           width:'500px'
         }}
       >
-        {/* {fileList.length >= 1 ? null : 'uploadButton'} */}
-        <Space direction='vertical'>
-        <UploadOutlined/>
-        <p>Upload cover image</p>
-        <p>16:9 ratio is recommended. Max image size 1mb</p>
+        <Space direction='vertical' style={{padding:'2rem'}}>
+        <UploadOutlined style={{color:'#000', fontSize:'28px', fontWeight:'600'}}/>
+        <p style={{color:'#000', fontSize:'14px', fontWeight:'600'}}>Upload cover image</p>
+        <p style={{color:'#979797', fontSize:'14px', fontWeight:'500'}}>16:9 ratio is recommended. Max image size 1mb</p>
         </Space>
       </Upload.Dragger>: <ImageContainer fileList={fileList} handleDelete={handleDelete} />
       }

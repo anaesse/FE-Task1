@@ -19,28 +19,14 @@ const ImageContainer = (props: Props) => {
        console.log(props.fileList[0].originFileObj)
      
   return (
-    <div style={{width:'500px', height:'100'}}>
-            <img src={imageUrl} alt='' style={{maxWidth:'100%', height:'auto'}}/>
-            <Button style={{border:'none', color:'#A80000', fill:'#000', fontSize:'16px', fontWeight:'600', padding:'12px 0',}} icon={<CloseOutlined style={{ color:'#A80000', fill:'#000', fontSize:'20px',}}  /> } onClick={props.handleDelete}>Delete & re-upload</Button>
+    <div >
+      <div style={{display:'flex', justifyContent:'center'}}>
+            <div style= {{backgroundImage:`url(${imageUrl})`, height:'300px', width:'550px', backgroundSize:'cover', backgroundPosition:'center'  }}/>
+      </div>
+
+            <Button style={{border:'none', color:'#A80000', fill:'#000', fontSize:'16px', fontWeight:'600', padding:'12px 0', display:'block'}} icon={<CloseOutlined style={{ color:'#A80000', fill:'#000', fontSize:'20px',}}  /> } onClick={props.handleDelete}>Delete & re-upload</Button>
             
     </div>
   )
 }
-
-
-// function previewFile() {
-//     var preview = document.querySelector('img');
-//     var file    = document.querySelector('input[type=file]').files[0];
-//     var reader  = new FileReader();
-  
-//     reader.onloadend = function () {
-//       preview.src = reader.result;
-//     }
-  
-//     if (file) {
-//       reader.readAsDataURL(file);
-//     } else {
-//       preview.src = "";
-//     }
-//   }
 export default ImageContainer
