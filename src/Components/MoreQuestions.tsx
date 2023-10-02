@@ -7,37 +7,62 @@ import { EditOutlined, UnorderedListOutlined, PlusOutlined } from '@ant-design/i
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
 
+
 const { TextArea } = Input;
 
 const items: MenuProps['items'] = [
   {
-    label: '',
+    label: 'Paragraph',
     key: '0',
   },
   {
     type: 'divider',
   },
   {
-    label: '',
+    label: 'Short answer',
     key: '1',
   },
   {
     type: 'divider',
   },
   {
-    label: '',
+    label: 'Yes/No',
     key: '3',
+  },
+  {
+    label: 'Dropdown',
+    key: '4',
+  },
+  {
+    label: 'Multiple Choice',
+    key: '5',
+  },
+  {
+    label: 'Date',
+    key: '6',
+  },
+  {
+    label: 'Number',
+    key: '7',
+  },
+  {
+    label: 'File Upload',
+    key: '8',
+  },
+  {
+    label: 'Video question',
+    key: '9',
   },
 ];
 
 
-function MoreQuestions() {
+function MoreQuestions({setAddQuestions}: {setAddQuestions:any}) {
   return (
     <div style={{marginBottom:'5em'}}>
     <Card
         title="Additional questions" bordered={true} headStyle= {{backgroundColor:'#D0F7FA',fontSize:'1.5em', fontWeight:'600'}} style={{ width: 595,  boxShadow: '2px 2px 2px 1px #f5f5f5' }}>
              <Form layout='vertical'>
-    <FormItem  >
+    <FormItem rules={[{ required: true, message: 'You cannot leave this field blank' }]} >
     <Space direction='vertical'  >
           <p style={{color:'#979797', fontSize:'14px', fontWeight:'500'}}>Paragraph</p>
         <Space size={140} >
@@ -47,7 +72,7 @@ function MoreQuestions() {
         <Input  bordered={false} style={{borderBottom:'1px solid #C4C4C4'}} maxLength={500} allowClear  />
         </Space>
     </FormItem>
-    <FormItem  >
+    <FormItem rules={[{ required: true, message: 'please select an item' }]} >
     <p style={{color:'#979797', fontSize:'14px', fontWeight:'500'}}>Dropdown</p>
     <Dropdown menu={{ items }} trigger={['click']} className='LabelQuestions'>
       <Space size={120} onClick={(e) => e.preventDefault()}style={{fontSize:'15px', fontWeight:'600', color:'#000'}}>
@@ -64,7 +89,7 @@ function MoreQuestions() {
         
       />
     </FormItem>
-    <FormItem>
+    <FormItem rules={[{ required: true, message: 'You can not leave this field blank' }]}>
       <Space direction='vertical'size={40}>
       <Space size={10}>
         <Button className='choiceButton'><UnorderedListOutlined /></Button>
@@ -81,7 +106,7 @@ function MoreQuestions() {
       </Space>
       <Space size={250}>
       <Button style={{border:'none', color:'#A80000', fill:'#000', fontSize:'16px', fontWeight:'600', padding:'0',}} icon={<PlusOutlined style={{ color:'#A80000', fill:'#000', fontSize:'20px',}} />}>Delete question</Button>
-      <Button  style={{ backgroundColor:'#087B2F', color:'#F4FBF7', fill:'#000', fontSize:'14px', fontWeight:'600'}}>save</Button>
+      <Button onClick= {()=>setAddQuestions}  style={{ backgroundColor:'#087B2F', color:'#F4FBF7', fill:'#000', fontSize:'14px', fontWeight:'600'}}>save</Button>
       </Space>
       </Space>
     </FormItem>

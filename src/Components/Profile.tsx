@@ -12,7 +12,7 @@ const handleChecked = (e: CheckboxChangeEvent) => {
   console.log(`checked = ${e.target.checked}`);
 };
 
-function Profile() {
+function Profile({setAddQuestions}: {setAddQuestions:any}) {
     const [eduChange, seteduChange] = useState(true);
     const [exChange, setexChange] = useState(true);
     const [reChange, setreChange] = useState(true);
@@ -62,7 +62,7 @@ function Profile() {
         </div>
     <Input bordered={false} type='tel' style={{borderBottom:'1px solid #C4C4C4'}} />
     </FormItem>
-    <Button style={{border:'none', boxShadow:'none', fontWeight:'semi-bold', fill:'#000', fontSize:'1.5em', lineHeight:'24px'}} icon={<PlusOutlined style={{fontWeight:'bold', fill:'#000', fontSize:'1.2em'}} />}>Add a question</Button>
+    <Button onClick= {()=>setAddQuestions} style={{border:'none', boxShadow:'none', fontWeight:'semi-bold', fill:'#000', fontSize:'1.5em', lineHeight:'24px'}} icon={<PlusOutlined style={{fontWeight:'bold', fill:'#000', fontSize:'1.2em'}} />}>Add a question</Button>
     </Form>
 </div>
   </Card> 

@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ImageUpload from './ImageUpload'
 import '../App.css'
 import PersonalInfo from './PersonalInfo'
 import Profile from './Profile'
 import MoreQuestions from './MoreQuestions'
-
 function ApplicationForm() {
+  const [addQuestions, setAddQustions ]=useState(true)
   return (
     <div className='Application-page'>
       <section>
@@ -15,10 +15,13 @@ function ApplicationForm() {
         <PersonalInfo />
       </section>
       <section>
-        <Profile />
+        <Profile setAddQuestions={()=>setAddQustions(true)} />
       </section>
       <section>
-        <MoreQuestions />
+        {
+          addQuestions? <MoreQuestions setAddQuestions={()=>setAddQustions(false)} /> : ""
+        }
+        
       </section>
       </div>
   )
