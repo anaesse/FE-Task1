@@ -21,7 +21,7 @@ const ImageContainer = (props: Props) => {
   return (
     <div >
       <div style={{display:'flex', justifyContent:'center'}}>
-            <div style= {{backgroundImage:`url(${imageUrl})`, height:'300px', width:'550px', backgroundSize:'cover', backgroundPosition:'center'  }}/>
+            <div style= {{backgroundImage:`url(${imageUrl})`, height:'400px', width:'550px', backgroundSize:'cover', backgroundPosition:'top'  }}/>
       </div>
 
             <Button style={{border:'none', color:'#A80000', fill:'#000', fontSize:'16px', fontWeight:'600', padding:'12px 0', display:'block'}} icon={<CloseOutlined style={{ color:'#A80000', fill:'#000', fontSize:'20px',}}  /> } onClick={props.handleDelete}>Delete & re-upload</Button>
