@@ -5,7 +5,7 @@ import PersonalInfo from './PersonalInfo'
 import Profile from './Profile'
 import MoreQuestions from './MoreQuestions'
 function ApplicationForm() {
-  const [addQuestions, setAddQustions ]=useState(true)
+  const [addQuestions, setAddQustions ]=useState(false)
   return (
     <div className='Application-page'>
       <section>

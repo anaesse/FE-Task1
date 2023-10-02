@@ -62,7 +62,7 @@ function Profile({setAddQuestions}: {setAddQuestions:any}) {
         </div>
     <Input bordered={false} type='tel' style={{borderBottom:'1px solid #C4C4C4'}} />
     </FormItem>
-    <Button onClick= {()=>setAddQuestions} style={{border:'none', boxShadow:'none', fontWeight:'semi-bold', fill:'#000', fontSize:'1.5em', lineHeight:'24px'}} icon={<PlusOutlined style={{fontWeight:'bold', fill:'#000', fontSize:'1.2em'}} />}>Add a question</Button>
+    <Button onClick= {setAddQuestions} style={{border:'none', boxShadow:'none', fontWeight:'semi-bold', fill:'#000', fontSize:'1.5em', lineHeight:'24px'}} icon={<PlusOutlined style={{fontWeight:'bold', fill:'#000', fontSize:'1.2em'}} />}>Add a question</Button>
     </Form>
 </div>
   </Card> 

@@ -106,7 +106,7 @@ function MoreQuestions({setAddQuestions}: {setAddQuestions:any}) {
       </Space>
       <Space size={250}>
       <Button style={{border:'none', color:'#A80000', fill:'#000', fontSize:'16px', fontWeight:'600', padding:'0',}} icon={<PlusOutlined style={{ color:'#A80000', fill:'#000', fontSize:'20px',}} />}>Delete question</Button>
-      <Button onClick= {()=>setAddQuestions}  style={{ backgroundColor:'#087B2F', color:'#F4FBF7', fill:'#000', fontSize:'14px', fontWeight:'600'}}>save</Button>
+      <Button onClick= {setAddQuestions}  style={{ backgroundColor:'#087B2F', color:'#F4FBF7', fill:'#000', fontSize:'14px', fontWeight:'600'}}>save</Button>
       </Space>
       </Space>
     </FormItem>
