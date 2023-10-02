@@ -95,7 +95,8 @@ function PersonalInfo() {
         <p>{dateChange ? 'Hide' : 'Show'}</p>
     </div>
         </div>
-    <Input bordered={false} type='tel' style={{borderBottom:'1px solid #C4C4C4'}} />
+    <Input bordered={false} type='tel' style={{borderBottom:'1px solid #C4C4C4'}} 
+    />
     </FormItem>
     <FormItem  >
         <div style={{display:'flex',alignItems:'center', justifyContent:'space-between' }}>
