@@ -11,7 +11,7 @@ import { PlusOutlined } from "@ant-design/icons";
 const handleChecked = (e: CheckboxChangeEvent) => {
   console.log(`checked = ${e.target.checked}`);
 };
-function PersonalInfo() {
+function PersonalInfo({setAddQuestions}: {setAddQuestions:any}) {
   const [phoneChange, setphoneChange] = useState(true);
   const [natChange, setnatChange] = useState(true);
   const [crChange, setcrChange] = useState(true);
@@ -237,7 +237,7 @@ function PersonalInfo() {
                 style={{ borderBottom: "1px solid #C4C4C4" }}
               />
             </FormItem>
-            <Button 
+            <Button onClick= {setAddQuestions} 
               style={{
                 border: "none",
                 boxShadow: "none",

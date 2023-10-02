@@ -12,7 +12,7 @@ function ApplicationForm() {
         <ImageUpload />
       </section>
       <section>
-        <PersonalInfo />
+        <PersonalInfo setAddQuestions={()=>setAddQustions(true)} />
       </section>
       <section>
         <Profile setAddQuestions={()=>setAddQustions(true)} />
